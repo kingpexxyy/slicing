@@ -1,26 +1,94 @@
 @import "tailwindcss";
 
+/* ── Light theme ──────────────────────────────────────────── */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg:        #f0fdf4;
+  --bg-card:   #ffffff;
+  --fg:        #14532d;
+  --fg-muted:  #6b7280;
+  --border:    #d1fae5;
+  --sidebar-bg:#ffffff;
+}
+
+/* ── Dark theme ───────────────────────────────────────────── */
+.dark {
+  --bg:        #0d1f14;
+  --bg-card:   #162b1d;
+  --fg:        #d1fae5;
+  --fg-muted:  #9ca3af;
+  --border:    #1e3a29;
+  --sidebar-bg:#111f16;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --font-sans: var(--font-jakarta);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-jakarta), sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.font-heading {
+  font-family: var(--font-barlow), sans-serif;
+  letter-spacing: 0.01em;
+}
+
+/* ── Entrance animations ──────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.animate-fade-in-up {
+  opacity: 0;
+  animation: fadeInUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, opacity;
+}
+.animate-fade-in {
+  opacity: 0;
+  animation: fadeIn 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: opacity;
+}
+
+/* ── Reduced motion ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-fade-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ── Horizontal scroll snap (produk row) ─────────────────── */
+.scroll-row {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 12px;
+}
+.scroll-row::-webkit-scrollbar {
+  height: 4px;
+}
+.scroll-row::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scroll-row::-webkit-scrollbar-thumb {
+  background: #86efac;
+  border-radius: 99px;
+}
+.scroll-row > * {
+  scroll-snap-align: start;
+  flex-shrink: 0;
 }

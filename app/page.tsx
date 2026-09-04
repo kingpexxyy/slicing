@@ -1,69 +1,52 @@
 import Image from "next/image";
+import Link from "next/link";
+import PageShell from "@/components/PageShell";
+import FloatingDecoWrapper from "@/components/FloatingDecoWrapper";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <PageShell>
+      <div className="relative flex h-full flex-1 flex-col items-center justify-center gap-6 overflow-hidden py-16 text-center">
+
+        {/* Mouse-follow floating decorations */}
+        <FloatingDecoWrapper />
+
+        {/* Logo — ganti public/logo.svg atau public/logo.png dengan file kamu */}
+        <div style={{ animationDelay: "0ms" }} className="relative z-10 animate-fade-in-up">
+          <div className="relative h-24 w-24 overflow-hidden rounded-3xl shadow-xl ring-4 ring-white/30">
+            <Image
+              src="/logo.svg"
+              alt="logo"
+              fill
+              sizes="96px"
+              className="object-cover"
+              priority
+            />
+          </div>
+        </div>
+
+        {/* Heading */}
+        <div style={{ animationDelay: "100ms" }} className="relative z-10 animate-fade-in-up">
+          <h2 className="font-heading text-5xl font-black uppercase leading-none tracking-wide text-green-800 dark:text-green-300">
+            Hai, selamat datang!
+          </h2>
+          <p className="mt-3 max-w-xs text-sm font-medium text-gray-500 dark:text-gray-400">
+            ini tempat aku jual barang-barang yang aku punya.
+            harga udah paling murah yang bisa aku kasih 😅
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+        {/* CTA */}
+        <div style={{ animationDelay: "200ms" }} className="relative z-10 animate-fade-in-up">
+          <Link
+            href="/produk"
+            className="font-heading inline-block rounded-2xl bg-green-500 px-8 py-3 text-lg font-bold uppercase tracking-wide text-white shadow-lg transition-[transform,box-shadow] duration-200 ease-out hover:scale-[1.05] hover:bg-green-600 hover:shadow-xl active:scale-95"
           >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            CEK BARANGNYA →
+          </Link>
         </div>
-      </main>
-    </div>
+
+      </div>
+    </PageShell>
   );
 }
