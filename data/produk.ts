@@ -7,10 +7,12 @@ export interface ProdukItem {
   tgl: string;
 }
 
+// foto pakai Unsplash — ganti dengan foto asli kamu kalau udah ada
+// caranya: taruh foto di public/images/produk1.jpg dst, lalu ganti url di bawah
 export const ProdukData: ProdukItem[] = [
   {
     id: 1,
-    foto: "/images/produk1.jpg",
+    foto: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=600&q=80",
     judul: "tas kulit coklat",
     cuplikan: "beli waktu ke bandung, ternyata jarang banget kepake. mending dijual deh.",
     konten:
@@ -19,7 +21,7 @@ export const ProdukData: ProdukItem[] = [
   },
   {
     id: 2,
-    foto: "/images/produk2.jpg",
+    foto: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&q=80",
     judul: "brownies coklat",
     cuplikan: "resep sendiri, mulai jualan gara-gara temen-temen nagih terus.",
     konten:
@@ -28,7 +30,7 @@ export const ProdukData: ProdukItem[] = [
   },
   {
     id: 3,
-    foto: "/images/produk3.jpg",
+    foto: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600&q=80",
     judul: "sneakers lokal size 42",
     cuplikan: "salah pesen ukuran, males tuker jadi jual aja. masih baru, box ada.",
     konten:
@@ -37,7 +39,7 @@ export const ProdukData: ProdukItem[] = [
   },
   {
     id: 4,
-    foto: "/images/produk4.jpg",
+    foto: "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=600&q=80",
     judul: "lilin lavender",
     cuplikan: "bikin sendiri dari soy wax, wanginya soft nggak bikin pusing.",
     konten:
@@ -46,7 +48,7 @@ export const ProdukData: ProdukItem[] = [
   },
   {
     id: 5,
-    foto: "/images/produk5.jpg",
+    foto: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=600&q=80",
     judul: "kamera film instax",
     cuplikan: "jarang dipake, masih mulus. dapet dari hadiah ulang tahun tapi bukan selera aku.",
     konten:
@@ -55,16 +57,16 @@ export const ProdukData: ProdukItem[] = [
   },
   {
     id: 6,
-    foto: "/images/produk6.jpg",
+    foto: "https://images.unsplash.com/photo-1556821840-3a63f15732ce?w=600&q=80",
     judul: "hoodie oversized abu",
     cuplikan: "udah nggak muat, sayang banget padahal masih bagus. beli di event pop-up lokal.",
     konten:
-      "beli ini di pop-up market bulan lalu, waktu itu langsung suka desainnya. tapi setelah dicoba di rumah, ukurannya terlalu oversized bahkan buat standar oversized aku.\n\nbahan: fleece premium, nggak pilling, tetep lembut setelah dicuci.\n\nwarna: abu medium (bukan abu muda, bukan gelap)\nsize tag: L tapi fit ke M-L\n\nkondisi: baru dicuci sekali, nggak ada cacat.\n\nharga: Rp 180.000.",
+      "beli ini di pop-up market bulan lalu, waktu itu langsung suka desainnya. tapi setelah dicoba di rumah, ukurannya terlalu oversized bahkan buat standar oversized aku.\n\nbahan: fleece premium, nggak pilling, tetep lembut setelah dicuci.\n\nwarna: abu medium\nsize tag: L tapi fit ke M-L\n\nkondisi: baru dicuci sekali, nggak ada cacat.\n\nharga: Rp 180.000.",
     tgl: "12 Mei 2026",
   },
   {
     id: 7,
-    foto: "/images/produk7.jpg",
+    foto: "https://images.unsplash.com/photo-1617957718614-8c23f060b2b7?w=600&q=80",
     judul: "tripod mini fleksibel",
     cuplikan: "beli dua, ternyata kebanyakan. yang satu ini nggak kepake sama sekali.",
     konten:
@@ -73,9 +75,9 @@ export const ProdukData: ProdukItem[] = [
   },
   {
     id: 8,
-    foto: "/images/produk8.jpg",
+    foto: "https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=600&q=80",
     judul: "buku catatan aesthetic",
-    cuplikan: "terlalu sayang buat dipake, akhirnya cuma numpuk. mending ke orang yang beneran mau nulis.",
+    cuplikan: "terlalu sayang buat dipake, akhirnya cuma numpuk. mending ke orang yang mau nulis.",
     konten:
       "beli tiga karena desainnya bagus banget waktu itu. sekarang sadar aku tipe orang yang lebih suka digital, jadi ketiga-tiganya cuma nganggur.\n\njual dua dulu, satu lagi disimpen.\n\ndetail:\n- cover linen warna sage green\n- kertas dotted 160 halaman\n- ukuran A5\n- ada pocket di belakang\n\nkondisi: baru, plastik wrapping masih ada.\n\nharga: Rp 55.000/buah, Rp 100.000/dua.",
     tgl: "25 Mei 2026",
